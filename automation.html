@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Automation & Development Practices - Bash scripting and Docker containerization by Mahmudul Hasan">
+    <title>Automation | Mahmudul Hasan</title>
+
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="Automation & Development Practices | Mahmudul Hasan">
+    <meta property="og:description"
+        content="Real-world Bash scripting examples and Docker containerization practices for IT operations">
+    <meta property="og:type" content="profile">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <a href="index.html" class="logo">MH.</a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="skills.html" class="nav-link">Skills</a></li>
+                        <li><a href="experience.html" class="nav-link">Experience</a></li>
+                        <li><a href="specialized-systems.html" class="nav-link">Specialized Systems</a></li>
+                        <li><a href="education.html" class="nav-link">Education</a></li>
+                        <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+                        <li><a href="automation.html" class="nav-link active">Automation</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="daily-logs.html" class="nav-link">Daily Logs</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main style="padding-top: 100px;">
+            <div class="container">
+                <h1 class="section-title">Automation and Development Practices</h1>
+                <p class="subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                    My expertise in automation and modern development practices is a testament to my forward-thinking
+                    approach to IT management
+                </p>
+            </div>
+
+            <!-- Bash Scripting Section -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">⚡ The Power of Bash Scripting: Real-World Examples</h2>
+                    <div class="content-block">
+                        <p>
+                            The use of Bash scripting is central to my philosophy of "doing it once, doing it right."
+                            Automation minimizes human error and ensures consistency across the infrastructure.
+                        </p>
+                    </div>
+
+                    <!-- Example 1 -->
+                    <div class="content-block" style="margin-top: 3rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">1. Automated System Health Check and
+                            Reporting</h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">Script Function
+                        </h4>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            A daily cron job executes a script that checks critical system metrics:
+                        </p>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li>Disk space utilization (<code>df -h</code>)</li>
+                            <li>Memory usage (<code>free -m</code>)</li>
+                            <li>CPU load (<code>uptime</code>)</li>
+                            <li>Status of key services (<code>systemctl status</code>)</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">Logic</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            The script includes conditional logic (<code>if/then/else</code>) to check if any metric
+                            exceeds a predefined threshold (e.g., disk usage > 90%).
+                        </p>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">Output</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            If a threshold is breached, the script automatically generates a formatted email report
+                            (using <code>mailx</code> or similar) and sends it to the IT team, providing proactive
+                            alerts before a failure occurs.
+                        </p>
+                    </div>
+
+                    <!-- Example 2 -->
+                    <div class="content-block" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">2. Automated Backup and Rotation Script
+                        </h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">Function</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            A script that performs a nightly backup of critical application data and configuration
+                            files.
+                        </p>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">Implementation
+                        </h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li>Utilizes <code>tar</code> for compression</li>
+                            <li>Uses <code>rsync</code> for efficient, incremental backups to a network-attached storage
+                                (NAS) device</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">Retention
+                            Policy</h4>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">
+                            Implements a GFS (Grandfather-Father-Son) rotation scheme, automatically deleting old
+                            backups to manage storage space while ensuring compliance with retention policies.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Docker Section -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">🐳 Docker and Containerization for IT Operations</h2>
+                    <div class="content-block">
+                        <p>
+                            I leverage Docker to simplify deployment, testing, and maintenance of various IT services,
+                            ensuring consistency across development, staging, and production environments.
+                        </p>
+                    </div>
+
+                    <div class="competencies-grid" style="margin-top: 3rem;">
+                        <!-- Use Case 1 -->
+                        <div class="competency-card">
+                            <h3>🔧 Standardized Development Environments</h3>
+                            <p><strong>Problem:</strong> Developers often face "it works on my machine" issues due to
+                                dependency conflicts.</p>
+                            <p><strong>Solution:</strong> I created standardized Docker images for different development
+                                stacks (e.g., LAMP, MEAN), ensuring that the development, staging, and production
+                                environments are identical, drastically reducing deployment-related bugs.</p>
+                        </div>
+
+                        <!-- Use Case 2 -->
+                        <div class="competency-card">
+                            <h3>🔒 Isolated Security Testing Tools</h3>
+                            <p><strong>Implementation:</strong> For my security practice lab, I use Docker to run
+                                security tools (e.g., Metasploit, Nmap) in isolated containers.</p>
+                            <p><strong>Benefit:</strong> This prevents the tools from interfering with the host system
+                                and ensures that the testing environment is clean and reproducible for every assessment.
+                            </p>
+                        </div>
+
+                        <!-- Use Case 3 -->
+                        <div class="competency-card">
+                            <h3>🚀 Simplified Application Deployment (WordPress)</h3>
+                            <p><strong>Process:</strong> Instead of manually installing and configuring Apache/Nginx,
+                                PHP, and MySQL for a WordPress site, I use a <code>docker-compose.yml</code> file to
+                                spin up the entire stack with a single command.</p>
+                            <p><strong>Impact:</strong> Significantly accelerates the deployment of new web properties
+                                and ensures consistency across all deployments.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Automation Philosophy -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">💡 Operational Efficiency Through Automation</h2>
+                    <div class="content-block">
+                        <p>
+                            My commitment to automation is not merely about reducing workload; it is about enhancing
+                            reliability and freeing up time for strategic initiatives. Every repetitive task is a
+                            candidate for automation, and every automated process is an opportunity to improve system
+                            resilience.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            By investing time upfront in creating robust scripts and containerized environments, I
+                            ensure that routine operations are executed flawlessly, allowing me to focus on high-value
+                            activities such as security enhancements, capacity planning, and strategic technology
+                            adoption.
+                        </p>
+                    </div>
+
+                    <div class="stats-grid" style="margin-top: 3rem;">
+                        <div class="stat-card">
+                            <div class="stat-icon">⚡</div>
+                            <h3>Efficiency</h3>
+                            <p>Reduced manual overhead by 70%</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🎯</div>
+                            <h3>Consistency</h3>
+                            <p>Zero configuration drift across environments</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🔄</div>
+                            <h3>Reproducibility</h3>
+                            <p>Identical deployments every time</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🛡️</div>
+                            <h3>Reliability</h3>
+                            <p>Minimized human error in critical operations</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Mahmudul Hasan. Built with HTML & CSS.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

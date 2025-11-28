@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Implementation Case Studies - Real-world IT infrastructure and security projects by Mahmudul Hasan">
+    <title>Case Studies | Mahmudul Hasan</title>
+
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="Case Studies | Mahmudul Hasan">
+    <meta property="og:description"
+        content="Detailed implementation case studies in Linux hardening, network segmentation, and surveillance systems">
+    <meta property="og:type" content="profile">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="container header-content">
+                <a href="index.html" class="logo">MH.</a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="skills.html" class="nav-link">Skills</a></li>
+                        <li><a href="experience.html" class="nav-link">Experience</a></li>
+                        <li><a href="specialized-systems.html" class="nav-link">Specialized Systems</a></li>
+                        <li><a href="education.html" class="nav-link">Education</a></li>
+                        <li><a href="case-studies.html" class="nav-link active">Case Studies</a></li>
+                        <li><a href="automation.html" class="nav-link">Automation</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="daily-logs.html" class="nav-link">Daily Logs</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <main style="padding-top: 100px;">
+            <div class="container">
+                <h1 class="section-title">Advanced Technical Implementation: Case Studies</h1>
+                <p class="subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                    Detailed technical implementations and case studies illustrating the complexity and impact of my
+                    work
+                </p>
+            </div>
+
+            <!-- Case Study 1 -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">🔒 Case Study 1: Linux System Hardening and Performance Tuning</h2>
+
+                    <div class="content-block">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Context</h3>
+                        <p>
+                            In a previous environment, the primary Linux servers (running CentOS) were experiencing
+                            intermittent performance degradation and were flagged for several medium-severity
+                            vulnerabilities during a routine audit.
+                        </p>
+                    </div>
+
+                    <div class="content-block" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Methodology and Implementation</h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">1.
+                            Vulnerability Remediation (Security Hardening)</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>SSH Configuration:</strong> Implemented a strict SSH policy, disabling root
+                                login, enforcing key-based authentication, and changing the default port. Utilized
+                                <code>fail2ban</code> to automatically block brute-force attempts, significantly
+                                reducing external attack vectors.</li>
+
+                            <li><strong>Firewall Implementation:</strong> Replaced the default firewall configuration
+                                with a more granular <code>firewalld</code> setup, enforcing a strict "deny all" policy
+                                and only explicitly allowing necessary ports (e.g., 80, 443, 22, 3306). Configured
+                                SELinux to enforce mandatory access control, adding an extra layer of defense against
+                                privilege escalation.</li>
+
+                            <li><strong>Audit Logging:</strong> Configured the Linux Audit System (<code>auditd</code>)
+                                to monitor all critical system calls, file access, and user activity, ensuring a
+                                comprehensive log trail for forensic analysis and compliance.</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">2. Performance
+                            Optimization</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Kernel Tuning:</strong> Adjusted kernel parameters via <code>sysctl.conf</code>,
+                                specifically optimizing network stack settings (TCP window sizes, buffer limits) and
+                                memory management (swappiness) to better suit the server's workload (primarily web
+                                serving and database operations).</li>
+
+                            <li><strong>Resource Monitoring:</strong> Deployed and configured system monitoring tools,
+                                including Prometheus and Grafana (or similar open-source alternatives), to establish
+                                baseline performance metrics and identify resource bottlenecks (CPU I/O wait, memory
+                                pressure).</li>
+
+                            <li><strong>Disk I/O Optimization:</strong> Analyzed disk I/O patterns and implemented
+                                logical volume management (LVM) with appropriate filesystem choices (e.g., XFS for large
+                                filesystems) and scheduler optimization (e.g., <code>deadline</code> or
+                                <code>noop</code> for virtualized environments) to improve data throughput.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block"
+                        style="margin-top: 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border-color: var(--accent);">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">💡 Impact</h3>
+                        <p>
+                            The security audit score improved by <strong>45%</strong>, and the intermittent performance
+                            issues were eliminated. The proactive monitoring system reduced the average time to detect
+                            and resolve minor issues from hours to minutes.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Study 2 -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">🌐 Case Study 2: Enterprise Network Segmentation and VPN Deployment</h2>
+
+                    <div class="content-block">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Context</h3>
+                        <p>
+                            At NEXUS Netro Limited, the network was a flat structure, posing a significant security risk
+                            (lateral movement) and causing broadcast storm issues. Secure remote access for the sales
+                            team was also a critical, unfulfilled requirement.
+                        </p>
+                    </div>
+
+                    <div class="content-block" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Methodology and Implementation</h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">1. Network
+                            Segmentation (VLAN Implementation)</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Design:</strong> Designed a segmented network architecture, creating separate
+                                Virtual Local Area Networks (VLANs) for different departments:
+                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                                    <li>Administration (VLAN 10)</li>
+                                    <li>Servers (VLAN 20)</li>
+                                    <li>Guest Wi-Fi (VLAN 30)</li>
+                                    <li>IP Surveillance (VLAN 40)</li>
+                                </ul>
+                            </li>
+
+                            <li><strong>Configuration:</strong> Configured managed switches (Cisco/HP) to enforce VLAN
+                                tagging (802.1Q) and set up inter-VLAN routing on the core router/firewall.</li>
+
+                            <li><strong>Access Control Lists (ACLs):</strong> Implemented strict ACLs on the firewall to
+                                control traffic flow between VLANs, ensuring that only necessary communication (e.g.,
+                                Admin to Server) was permitted, effectively preventing unauthorized lateral movement.
+                            </li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">2. Secure
+                            Remote Access (VPN Implementation)</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Technology Selection:</strong> Chose an OpenVPN solution for its security,
+                                flexibility, and open-source nature, deploying it on a dedicated Linux server.</li>
+
+                            <li><strong>Authentication:</strong> Configured the OpenVPN server to integrate with the
+                                existing Active Directory via RADIUS, enforcing centralized user authentication and
+                                two-factor authentication (2FA) for all remote connections.</li>
+
+                            <li><strong>Tunneling and Routing:</strong> Established full-tunnel VPN connections for
+                                remote users, ensuring all traffic was routed through the corporate firewall for
+                                inspection and policy enforcement, thereby extending the corporate security perimeter to
+                                remote endpoints.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block"
+                        style="margin-top: 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border-color: var(--accent);">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">💡 Impact</h3>
+                        <p>
+                            The network segmentation drastically improved security by isolating critical assets and
+                            reduced network congestion. The VPN deployment enabled <strong>100% secure remote
+                                access</strong> for the sales team, directly supporting business continuity and remote
+                            productivity.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Study 3 -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">📹 Case Study 3: Surveillance System Integration and Optimization</h2>
+
+                    <div class="content-block">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Context</h3>
+                        <p>
+                            A client required a high-density surveillance system for a large industrial facility,
+                            demanding high-resolution recording and long-term storage, with a requirement for
+                            integration with their existing access control system.
+                        </p>
+                    </div>
+
+                    <div class="content-block" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Methodology and Implementation</h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">1. System
+                            Design and Hardware Selection</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Camera Selection:</strong> Specified a mix of 4K IP cameras for critical areas
+                                and 1080p cameras for general coverage, calculating the required bandwidth based on
+                                H.265 compression and a target frame rate of 15 FPS.</li>
+
+                            <li><strong>NVR and Storage:</strong> Designed a custom NVR solution utilizing a
+                                high-performance server with a dedicated RAID 6 array (for redundancy and performance)
+                                to meet the 90-day retention requirement for all camera feeds. The total storage
+                                capacity was calculated based on the bit rate of all cameras.</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">2. Network and
+                            QoS Configuration</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Dedicated Network:</strong> Deployed a dedicated, isolated network (VLAN 40) for
+                                all IP cameras to prevent surveillance traffic from saturating the main corporate
+                                network.</li>
+
+                            <li><strong>QoS Implementation:</strong> Configured Quality of Service (QoS) on the network
+                                switches to prioritize video streaming traffic (using DSCP marking) to the NVR, ensuring
+                                zero dropped frames and reliable recording, even during peak network usage.</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">3. Integration
+                            with Access Control</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>API Integration:</strong> Utilized the VMS platform's API to establish a
+                                communication link with the client's existing access control system (e.g., ZKTeco or
+                                similar).</li>
+
+                            <li><strong>Event Correlation:</strong> Configured the VMS to automatically trigger actions
+                                (e.g., display a live feed, send an alert) when a specific event occurred on the access
+                                control system (e.g., a door forced open, or an unauthorized access attempt), creating a
+                                unified security event log and response capability.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block"
+                        style="margin-top: 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border-color: var(--accent);">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">💡 Impact</h3>
+                        <p>
+                            The client received a high-reliability, high-resolution surveillance system that met all
+                            compliance requirements for video retention. The integration with access control provided a
+                            powerful, centralized security monitoring platform, significantly enhancing the facility's
+                            overall security posture.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Mahmudul Hasan. Built with HTML & CSS.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
