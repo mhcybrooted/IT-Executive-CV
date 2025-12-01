@@ -75,18 +75,60 @@
             <!-- Contact Section -->
             <section id="contact" class="contact-section">
                 <div class="container">
-                    <div class="contact-content">
-                        <p class="contact-text">
-                            I'm currently open to new opportunities and collaborations in IT infrastructure management,
-                            cybersecurity, and specialized security systems. Whether you have a question or just want to
-                            say hi, feel free to reach out!
-                        </p>
-                        <a href="mailto:mhcybrooted@gmail.com" class="btn btn-primary">Say Hello</a>
-                        <div style="margin-top: 2rem; color: var(--text-secondary);">
-                            <p>📧 mhcybrooted@gmail.com</p>
-                            <p>🔗 <a href="https://github.com/mhcybrooted" target="_blank"
-                                    style="color: var(--accent);">github.com/mhcybrooted</a></p>
-                            <p>📍 Dhaka, Bangladesh</p>
+                    <div class="contact-grid">
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <h2 style="color: var(--accent); margin-bottom: 1rem;">Let's Connect</h2>
+                            <p class="contact-text">
+                                I'm currently open to new opportunities and collaborations in IT infrastructure
+                                management,
+                                cybersecurity, and specialized security systems. Whether you have a question or just
+                                want to
+                                say hi, feel free to reach out!
+                            </p>
+                            <div style="margin-top: 2rem; color: var(--text-secondary);">
+                                <p style="margin-bottom: 1rem;">📧 <a href="mailto:mhcybrooted@gmail.com"
+                                        style="color: var(--accent);">mhcybrooted@gmail.com</a></p>
+                                <p style="margin-bottom: 1rem;">🔗 <a href="https://github.com/mhcybrooted"
+                                        target="_blank" style="color: var(--accent);">github.com/mhcybrooted</a></p>
+                                <p>📍 Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="contact-form-wrapper">
+                            <form id="contact-form" action="https://formspree.io/f/xnnedeeo" method="POST"
+                                class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required
+                                        placeholder="your.email@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <input type="text" id="subject" name="subject" required
+                                        placeholder="What's this about?">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        placeholder="Your message here..."></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" id="submit-btn">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading" style="display: none;">Sending...</span>
+                                </button>
+
+                                <div id="form-status" style="margin-top: 1rem; display: none;"></div>
+                            </form>
                         </div>
                     </div>
                 </div>

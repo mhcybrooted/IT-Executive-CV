@@ -1,0 +1,50 @@
+### Executive Software Engineer
+- Developed and maintained software solutions for surveillance and security systems
+- Configured and managed CCTV systems including IP/analog cameras, DVRs/NVRs, and VMS
+- Designed and deployed custom VMS solutions tailored to client requirements
+- Set up network infrastructure to support reliable video streaming
+- Ensured integration of CCTV/VMS with access control and other security systems
+
+### IoT Developer - Health Monitoring System
+- Designed IoT-based health monitoring systems using Arduino and ESP32 microcontrollers
+- Implemented BMP and ECG sensor integration for real-time health data collection
+- Created human temperature monitoring system with accurate digital sensors
+- Integrated fire sensors and motion sensors for environmental monitoring
+- Created data visualization interfaces to display sensor readings in real-time
+
+### Android Developer - Smart Academic Infrastructure
+- Developed a comprehensive academic management Android application using Kotlin and Jetpack Compose
+- Implemented automated attendance tracking system using location services and Firebase
+- Created assignment submission and management features for students and faculty
+- Built interactive classroom quiz functionality with real-time grading
+- Applied MVVM architecture pattern for maintainable and testable code
+[View Repository](https://github.com/mhcybrooted/SmartAI.git)
+
+### Full Stack Developer - Community Anti-Corruption Hub
+- Developed an anti-corruption platform using Spring Boot and Thymeleaf
+- Implemented server-side rendering with Thymeleaf templates
+- Designed and developed RESTful APIs using Spring Boot for data management
+- Created secure user authentication and authorization systems
+- Utilized Kotlin for backend development with Gradle build system
+[View Repository](https://github.com/mhcybrooted/CACHCO.git)
+
+### Linux System Administrator
+- Maintained and administered Arch Linux systems for 5+ years
+- Utilized Kali Linux for security testing and network analysis
+- Configured and optimized Linux environments for development workflows
+- Implemented custom shell scripts for automation of routine tasks
+- Set up and managed development environments with Docker on Linux
+
+### Python Developer
+- Developed a scientific calculator application using Flet Python framework
+- Implemented complex mathematical operations and scientific functions
+- Created responsive and intuitive user interface with Material Design components
+- Applied proper state management for handling calculator operations
+[View Repository](https://github.com/mhcybrooted/CalculatorUsingFletPython.git)
+
+### Security & Networking Enthusiast
+- Gained practical knowledge in network configuration, routing, and troubleshooting
+- Explored surveillance security systems and camera setups for monitoring
+- Studied cybersecurity principles and common attack vectors using Kali Linux tools
+- Implemented basic security measures for protecting systems and networks
+- Applied data structures and algorithms knowledge to optimize software solutions

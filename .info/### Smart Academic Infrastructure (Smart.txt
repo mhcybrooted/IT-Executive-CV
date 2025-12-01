@@ -1,0 +1,44 @@
+### Smart Academic Infrastructure (SmartAI)
+A comprehensive academic management platform for educational institutions built with Kotlin, Jetpack Compose, and Firebase.
+- Automated attendance tracking using location services
+- Assignment submission and management features
+- Virtual classroom capabilities for remote learning
+- MVVM architecture and Firebase integration
+[View Code](https://github.com/mhcybrooted/SmartAI.git)
+
+### Community Anti-Corruption Hub (CACHCO)
+A platform to combat corruption through community engagement and reporting.
+- Built with Spring Boot, Kotlin, and Thymeleaf
+- Secure data handling and user privacy features
+- Responsive web interfaces across multiple devices
+- RESTful APIs for data management
+[View Code](https://github.com/mhcybrooted/CACHCO.git)
+
+### IoT Health Monitoring System
+A comprehensive health monitoring system using Arduino and ESP32 microcontrollers.
+- Integration of BMP, ECG, and temperature sensors
+- Real-time data collection and processing
+- Custom circuit boards for sensor integration
+- Motion sensors for patient activity monitoring
+
+### Scientific Calculator with Flet Python
+A feature-rich scientific calculator application using Python and the Flet framework.
+- Standard arithmetic operations and scientific functions
+- Responsive and intuitive Material Design UI
+- Clean architecture for calculator operations
+- Proper state management implementation
+[View Code](https://github.com/mhcybrooted/CalculatorUsingFletPython.git)
+
+### Linux Development Environment Setup
+Configured and optimized Arch Linux for development across multiple programming languages and frameworks.
+- Custom shell scripts for automating workflows
+- Secure networking configurations
+- Containerized development with Docker
+- Multiple Linux distributions for different needs
+
+### Network & Security Lab Setup
+Configured a home lab environment for practicing networking and security concepts.
+- Virtual machines for testing security scenarios
+- Basic surveillance system with IP cameras
+- Penetration testing with Kali Linux
+- Applied data structures and algorithms

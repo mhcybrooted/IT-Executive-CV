@@ -184,3 +184,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const formStatus = document.getElementById('form-status');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            formStatus.style.display = 'none';
+            
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success
+                    formStatus.textContent = '? Message sent successfully! I\'ll get back to you soon.';
+                    formStatus.className = 'success';
+                    formStatus.style.display = 'block';
+                    contactForm.reset();
+                } else {
+                    // Error
+                    formStatus.textContent = '? Oops! There was a problem sending your message. Please try again.';
+                    formStatus.className = 'error';
+                    formStatus.style.display = 'block';
+                }
+            } catch (error) {
+                // Network error
+                formStatus.textContent = '? Network error. Please check your connection and try again.';
+                formStatus.className = 'error';
+                formStatus.style.display = 'block';
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});

@@ -1,0 +1,129 @@
+[MH](https://mhcybroot.netlify.app/)
+- [About](https://mhcybroot.netlify.app/#about)
+- [Experience](https://mhcybroot.netlify.app/#experience)
+- [Skills](https://mhcybroot.netlify.app/#skills)
+- [Projects](https://mhcybroot.netlify.app/#projects)
+- [Education](https://mhcybroot.netlify.app/#education)
+[About](https://mhcybroot.netlify.app/#about)
+[Experience](https://mhcybroot.netlify.app/#experience)
+[Skills](https://mhcybroot.netlify.app/#skills)
+[Projects](https://mhcybroot.netlify.app/#projects)
+[Education](https://mhcybroot.netlify.app/#education)
+
+## About Me
+
+Award-winning developer with expertise spanning mobile, web, IoT technologies, and Linux systems. Achieved top rankings in national skill competitions, including 1st place at Dhaka Polytechnic Institute (2025) and 2nd place at Chattogram Regional Level (2023).
+Proficient in Flutter for cross-platform development, Android native development with Kotlin and Jetpack Compose, backend services with Spring Boot, hardware programming with Arduino and ESP32, and Python development with Flet.
+Strong experience in configuring CCTV/VMS and custom VMS solutions from working at Spy Security System. Knowledge of networking, surveillance security, cybersecurity, and data structures & algorithms.
+Experienced Arch Linux user (5+ years) with knowledge of Kali Linux and other distributions. Diploma holder in Computer Science and Technology with a strong foundation in software development, hardware integration, and system administration.
+[Download CV](https://mhcybroot.netlify.app/Mahmudul_Hasan_CV.pdf)
+
+### Executive Software Engineer
+- Developed and maintained software solutions for surveillance and security systems
+- Configured and managed CCTV systems including IP/analog cameras, DVRs/NVRs, and VMS
+- Designed and deployed custom VMS solutions tailored to client requirements
+- Set up network infrastructure to support reliable video streaming
+- Ensured integration of CCTV/VMS with access control and other security systems
+
+### IoT Developer - Health Monitoring System
+- Designed IoT-based health monitoring systems using Arduino and ESP32 microcontrollers
+- Implemented BMP and ECG sensor integration for real-time health data collection
+- Created human temperature monitoring system with accurate digital sensors
+- Integrated fire sensors and motion sensors for environmental monitoring
+- Created data visualization interfaces to display sensor readings in real-time
+
+### Android Developer - Smart Academic Infrastructure
+- Developed a comprehensive academic management Android application using Kotlin and Jetpack Compose
+- Implemented automated attendance tracking system using location services and Firebase
+- Created assignment submission and management features for students and faculty
+- Built interactive classroom quiz functionality with real-time grading
+- Applied MVVM architecture pattern for maintainable and testable code
+[View Repository](https://github.com/mhcybrooted/SmartAI.git)
+
+### Full Stack Developer - Community Anti-Corruption Hub
+- Developed an anti-corruption platform using Spring Boot and Thymeleaf
+- Implemented server-side rendering with Thymeleaf templates
+- Designed and developed RESTful APIs using Spring Boot for data management
+- Created secure user authentication and authorization systems
+- Utilized Kotlin for backend development with Gradle build system
+[View Repository](https://github.com/mhcybrooted/CACHCO.git)
+
+### Linux System Administrator
+- Maintained and administered Arch Linux systems for 5+ years
+- Utilized Kali Linux for security testing and network analysis
+- Configured and optimized Linux environments for development workflows
+- Implemented custom shell scripts for automation of routine tasks
+- Set up and managed development environments with Docker on Linux
+
+### Python Developer
+- Developed a scientific calculator application using Flet Python framework
+- Implemented complex mathematical operations and scientific functions
+- Created responsive and intuitive user interface with Material Design components
+- Applied proper state management for handling calculator operations
+[View Repository](https://github.com/mhcybrooted/CalculatorUsingFletPython.git)
+
+### Security & Networking Enthusiast
+- Gained practical knowledge in network configuration, routing, and troubleshooting
+- Explored surveillance security systems and camera setups for monitoring
+- Studied cybersecurity principles and common attack vectors using Kali Linux tools
+- Implemented basic security measures for protecting systems and networks
+- Applied data structures and algorithms knowledge to optimize software solutions
+
+### Smart Academic Infrastructure (SmartAI)
+A comprehensive academic management platform for educational institutions built with Kotlin, Jetpack Compose, and Firebase.
+- Automated attendance tracking using location services
+- Assignment submission and management features
+- Virtual classroom capabilities for remote learning
+- MVVM architecture and Firebase integration
+[View Code](https://github.com/mhcybrooted/SmartAI.git)
+
+### Community Anti-Corruption Hub (CACHCO)
+A platform to combat corruption through community engagement and reporting.
+- Built with Spring Boot, Kotlin, and Thymeleaf
+- Secure data handling and user privacy features
+- Responsive web interfaces across multiple devices
+- RESTful APIs for data management
+[View Code](https://github.com/mhcybrooted/CACHCO.git)
+
+### IoT Health Monitoring System
+A comprehensive health monitoring system using Arduino and ESP32 microcontrollers.
+- Integration of BMP, ECG, and temperature sensors
+- Real-time data collection and processing
+- Custom circuit boards for sensor integration
+- Motion sensors for patient activity monitoring
+
+### Scientific Calculator with Flet Python
+A feature-rich scientific calculator application using Python and the Flet framework.
+- Standard arithmetic operations and scientific functions
+- Responsive and intuitive Material Design UI
+- Clean architecture for calculator operations
+- Proper state management implementation
+[View Code](https://github.com/mhcybrooted/CalculatorUsingFletPython.git)
+
+### Linux Development Environment Setup
+Configured and optimized Arch Linux for development across multiple programming languages and frameworks.
+- Custom shell scripts for automating workflows
+- Secure networking configurations
+- Containerized development with Docker
+- Multiple Linux distributions for different needs
+
+### Network & Security Lab Setup
+Configured a home lab environment for practicing networking and security concepts.
+- Virtual machines for testing security scenarios
+- Basic surveillance system with IP cameras
+- Penetration testing with Kali Linux
+- Applied data structures and algorithms
+
+### Diploma in Computer Science and Technology
+
+#### Coursework:
+
+### National Skill Competitions
+
+[MH](https://mhcybroot.netlify.app/)
+© 2025 Mahmudul Hasan. All rights reserved.
+[Home](https://mhcybroot.netlify.app/#hero)
+[About](https://mhcybroot.netlify.app/#about)
+[Experience](https://mhcybroot.netlify.app/#experience)
+[Skills](https://mhcybroot.netlify.app/#skills)
+[Projects](https://mhcybroot.netlify.app/#projects)
