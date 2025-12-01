@@ -183,25 +183,25 @@ document.addEventListener('DOMContentLoaded', () => {
             projectsGrid.innerHTML = '<p class="error-msg">Failed to load projects. Please try again later.</p>';
         }
     }
-});
+
 
     // Contact Form Handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const submitBtn = document.getElementById('submit-btn');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoading = submitBtn.querySelector('.btn-loading');
             const formStatus = document.getElementById('form-status');
-            
+
             // Show loading state
             btnText.style.display = 'none';
             btnLoading.style.display = 'inline';
             submitBtn.disabled = true;
             formStatus.style.display = 'none';
-            
+
             try {
                 const formData = new FormData(contactForm);
                 const response = await fetch(contactForm.action, {
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Accept': 'application/json'
                     }
                 });
-                
+
                 if (response.ok) {
                     // Success
                     formStatus.textContent = '? Message sent successfully! I\'ll get back to you soon.';

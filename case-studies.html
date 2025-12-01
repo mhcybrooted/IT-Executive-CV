@@ -41,7 +41,7 @@
                         <li><a href="case-studies.html" class="nav-link active">Case Studies</a></li>
                         <li><a href="automation.html" class="nav-link">Automation</a></li>
                         <li><a href="projects.html" class="nav-link">Projects</a></li>
-                        <li><a href="daily-logs.html" class="nav-link">Daily Logs</a></li>
+                        <!-- <li><a href="daily-logs.html" class="nav-link">Daily Logs</a></li> -->
                         <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
@@ -100,7 +100,8 @@
                             <li><strong>SSH Configuration:</strong> Implemented a strict SSH policy, disabling root
                                 login, enforcing key-based authentication, and changing the default port. Utilized
                                 <code>fail2ban</code> to automatically block brute-force attempts, significantly
-                                reducing external attack vectors.</li>
+                                reducing external attack vectors.
+                            </li>
 
                             <li><strong>Firewall Implementation:</strong> Replaced the default firewall configuration
                                 with a more granular <code>firewalld</code> setup, enforcing a strict "deny all" policy
@@ -129,7 +130,8 @@
                             <li><strong>Disk I/O Optimization:</strong> Analyzed disk I/O patterns and implemented
                                 logical volume management (LVM) with appropriate filesystem choices (e.g., XFS for large
                                 filesystems) and scheduler optimization (e.g., <code>deadline</code> or
-                                <code>noop</code> for virtualized environments) to improve data throughput.</li>
+                                <code>noop</code> for virtualized environments) to improve data throughput.
+                            </li>
                         </ul>
                     </div>
 
