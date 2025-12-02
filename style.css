@@ -838,6 +838,7 @@ h6 {
         padding: 1.5rem;
     }
 }
+
 /* Contact Section */
 .contact-section {
     padding: 100px 0;
@@ -970,22 +971,11 @@ h6 {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .contact-info {
         position: static;
     }
-    
-    .contact-form-wrapper {
-        padding: 2rem 1.5rem;
-    }
-}
 
-/* Skills Progress Bars */
-.skills-progress-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
 }
 
 .skill-item {
@@ -1104,7 +1094,7 @@ h6 {
     background: var(--bg-secondary);
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-color);
     transform: translateY(-20px);
     transition: transform 0.3s ease;
@@ -1116,7 +1106,7 @@ h6 {
 
 [data-theme="light"] .search-content {
     background: var(--white);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .search-header {
@@ -1200,3 +1190,27 @@ h6 {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+/* Animated Statistics */
+.stat-number {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.stat-number::after {
+    content: "+";
+    font-size: 3rem;
+    vertical-align: super;
+    opacity: 0.8;
+}
+
+.stat-label {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+   
