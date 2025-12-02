@@ -284,6 +284,146 @@
                     </div>
                 </div>
             </section>
+            <!-- Case Study 4: Hospital API -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">🏥 Case Study 4: Securing Hospital Management API</h2>
+
+                    <div class="content-block">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Context</h3>
+                        <p>
+                            A hospital management system's REST API was vulnerable to IDOR (Insecure Direct Object
+                            References) and lacked proper rate limiting, posing a risk to patient data privacy.
+                        </p>
+                    </div>
+
+                    <div class="content-block" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Methodology and Implementation</h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">1. Security
+                            Implementation</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Spring Security 6:</strong> Migrated to the latest Spring Security framework,
+                                implementing a robust filter chain.</li>
+                            <li><strong>RBAC & Method Security:</strong> Enforced strict Role-Based Access Control using
+                                <code>@PreAuthorize</code> annotations to ensure users could only access their own
+                                records.</li>
+                            <li><strong>JWT Enhancement:</strong> Implemented short-lived Access Tokens and secure
+                                Refresh Token rotation to mitigate session hijacking risks.</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">2. Resilience
+                            Patterns</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Rate Limiting:</strong> Integrated Bucket4j to prevent API abuse and DoS
+                                attacks.</li>
+                            <li><strong>Input Validation:</strong> Implemented comprehensive DTO validation to sanitize
+                                all incoming data payloads.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block"
+                        style="margin-top: 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border-color: var(--accent);">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">💡 Impact</h3>
+                        <p>
+                            Eliminated all critical IDOR vulnerabilities and ensured HIPAA-compliant data access
+                            controls. The system successfully withstood a subsequent penetration test.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Study 5: IoT Health Monitor -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">💓 Case Study 5: Optimizing IoT Health Monitor Data Flow</h2>
+
+                    <div class="content-block">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Context</h3>
+                        <p>
+                            An IoT health monitoring prototype (ESP32-based) suffered from data packet loss and high
+                            latency when transmitting real-time ECG and SpO2 data to the cloud.
+                        </p>
+                    </div>
+
+                    <div class="content-block" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Methodology and Implementation</h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">1. Protocol
+                            Optimization</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>MQTT Implementation:</strong> Switched from HTTP POST requests to MQTT (Message
+                                Queuing Telemetry Transport) for lightweight, persistent connections.</li>
+                            <li><strong>QoS Tuning:</strong> Configured MQTT QoS Level 1 (At Least Once) to guarantee
+                                data delivery without excessive overhead.</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">2. Firmware
+                            Refactoring</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>FreeRTOS Tasks:</strong> Refactored the C++ firmware to use FreeRTOS tasks,
+                                pinning the sensor reading task to Core 0 and the Wi-Fi transmission task to Core 1 of
+                                the ESP32.</li>
+                            <li><strong>Buffer Management:</strong> Implemented a circular buffer to temporarily store
+                                sensor readings during network jitter.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block"
+                        style="margin-top: 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border-color: var(--accent);">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">💡 Impact</h3>
+                        <p>
+                            Reduced data latency by 60% and achieved near-zero packet loss, enabling reliable real-time
+                            remote patient monitoring.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case Study 6: RMS Lag -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">🎓 Case Study 6: Resolving Result Management System (RMS) Lag</h2>
+
+                    <div class="content-block">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Context</h3>
+                        <p>
+                            The RMS application was experiencing 10+ second load times when generating transcripts for
+                            students with extensive academic histories.
+                        </p>
+                    </div>
+
+                    <div class="content-block" style="margin-top: 2rem;">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Methodology and Implementation</h3>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">1. Database
+                            Optimization</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>N+1 Query Fix:</strong> Identified and resolved N+1 query issues in
+                                Hibernate/JPA by using <code>@EntityGraph</code> and <code>JOIN FETCH</code> to retrieve
+                                student data and grades in a single query.</li>
+                            <li><strong>Indexing:</strong> Added composite indexes to the PostgreSQL database on
+                                frequently queried columns (student_id, semester_id).</li>
+                        </ul>
+
+                        <h4 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 1rem;">2. Caching
+                            Strategy</h4>
+                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 2rem;">
+                            <li><strong>Redis Integration:</strong> Implemented Redis caching for static data (course
+                                lists, department info) and frequently accessed student profiles.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block"
+                        style="margin-top: 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border-color: var(--accent);">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">💡 Impact</h3>
+                        <p>
+                            Reduced transcript generation time from 12 seconds to under 800ms, significantly improving
+                            the user experience for administrative staff.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer class="footer">

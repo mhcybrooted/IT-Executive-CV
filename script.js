@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.section').forEach(section => {
-        observer.observe(section);
+    document.querySelectorAll('.section, .skill-item, .timeline-item').forEach(el => {
+        observer.observe(el);
     });
 
     function createProjectCard(repo) {
@@ -237,4 +237,191 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // Search Functionality
+    const searchPages = [
+        { url: 'index.html', title: 'Home' },
+        { url: 'skills.html', title: 'Skills' },
+        { url: 'experience.html', title: 'Experience' },
+        { url: 'specialized-systems.html', title: 'Specialized Systems' },
+        { url: 'education.html', title: 'Education' },
+        { url: 'case-studies.html', title: 'Case Studies' },
+        { url: 'automation.html', title: 'Automation' },
+        { url: 'projects.html', title: 'Projects' },
+        { url: 'contact.html', title: 'Contact' }
+    ];
+
+    // Inject Search Modal
+    const searchModalHTML = `
+    <div id="search-modal" class="search-modal">
+        <div class="search-content">
+            <div class="search-header">
+                <input type="text" id="search-input" placeholder="Search entire website..." autocomplete="off">
+                <button id="close-search" aria-label="Close Search">&times;</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', searchModalHTML);
+
+    // Add Search Icon to Header
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        const searchBtnHTML = `
+        <button id="search-toggle" class="theme-toggle" aria-label="Open Search" style="margin-right: 10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+        `;
+        themeToggle.insertAdjacentHTML('beforebegin', searchBtnHTML);
+    }
+
+    // Search Logic
+    const searchModal = document.getElementById('search-modal');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    const closeSearchBtn = document.getElementById('close-search');
+    const searchToggleBtn = document.getElementById('search-toggle');
+
+    let siteContent = [];
+    let isContentFetched = false;
+
+    const fallbackContent = [
+        { url: 'index.html', title: 'Home', content: 'Mahmudul Hasan IT Executive Linux System Administrator Executive Summary Professional Profile' },
+        { url: 'skills.html', title: 'Skills', content: 'Core Competencies Technical Mastery Linux Administration Networking Cybersecurity System Administration Arch Linux Kali Ubuntu CentOS Bash Docker' },
+        { url: 'experience.html', title: 'Experience', content: 'Professional Experience SKYLINK Innovations NEXUS Netro Spy Security System Decodes Lab IT Executive System Administrator' },
+        { url: 'specialized-systems.html', title: 'Specialized Systems', content: 'Specialized Systems ZKTeco Biometric Systems CCTV VMS Surveillance Security Hardware' },
+        { url: 'education.html', title: 'Education', content: 'Education Diploma in Computer Technology Feni Computer Institute Personal Projects CEH Internship' },
+        { url: 'case-studies.html', title: 'Case Studies', content: 'Case Studies Linux System Hardening Network Segmentation Surveillance System Integration' },
+        { url: 'automation.html', title: 'Automation', content: 'Automation Bash Scripting Docker Containerization System Maintenance Log Rotation' },
+        { url: 'projects.html', title: 'Projects', content: 'Projects GitHub Repositories Portfolio Open Source' },
+        { url: 'contact.html', title: 'Contact', content: 'Contact Me Get in Touch Email Phone Location Formspree' }
+    ];
+
+    async function fetchSiteContent() {
+        if (isContentFetched) return;
+
+        searchResults.innerHTML = '<div class="search-result-item"><p>Indexing content...</p></div>';
+
+        try {
+            const promises = searchPages.map(async (page) => {
+                const response = await fetch(page.url);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const mainContent = doc.querySelector('main') || doc.body;
+                const scripts = mainContent.querySelectorAll('script, style');
+                scripts.forEach(s => s.remove());
+
+                const text = mainContent.innerText.replace(/\s+/g, ' ').trim();
+                return {
+                    url: page.url,
+                    title: page.title,
+                    content: text
+                };
+            });
+
+            siteContent = await Promise.all(promises);
+            isContentFetched = true;
+            searchResults.innerHTML = '';
+            performSearch(searchInput.value);
+        } catch (error) {
+            console.warn('Fetch failed (likely local file access), using fallback index:', error);
+            siteContent = fallbackContent;
+            isContentFetched = true;
+            searchResults.innerHTML = '';
+            performSearch(searchInput.value);
+        }
+    }
+
+    function performSearch(query) {
+        if (!query) {
+            searchResults.innerHTML = '';
+            return;
+        }
+
+        const lowerQuery = query.toLowerCase();
+        const results = siteContent.filter(page => {
+            return page.title.toLowerCase().includes(lowerQuery) ||
+                page.content.toLowerCase().includes(lowerQuery);
+        });
+
+        displayResults(results, lowerQuery);
+    }
+
+    function displayResults(results, query) {
+        if (results.length === 0) {
+            searchResults.innerHTML = '<div class="search-result-item"><p>No results found.</p></div>';
+            return;
+        }
+
+        searchResults.innerHTML = results.map(result => {
+            // Create a snippet
+            const contentLower = result.content.toLowerCase();
+            const index = contentLower.indexOf(query);
+            let snippet = '';
+
+            if (index > -1) {
+                const start = Math.max(0, index - 50);
+                const end = Math.min(result.content.length, index + 100);
+                snippet = '...' + result.content.substring(start, end) + '...';
+            } else {
+                snippet = result.content.substring(0, 150) + '...';
+            }
+
+            return `
+            <a href="${result.url}" class="search-result-item" onclick="closeSearch()">
+                <h4>${result.title}</h4>
+                <p>${snippet}</p>
+            </a>
+            `;
+        }).join('');
+    }
+
+    function openSearch() {
+        searchModal.classList.add('active');
+        searchInput.focus();
+        fetchSiteContent();
+    }
+
+    function closeSearch() {
+        searchModal.classList.remove('active');
+        searchInput.value = '';
+        searchResults.innerHTML = '';
+    }
+
+    window.closeSearch = closeSearch; // Make global for onclick
+
+    if (searchToggleBtn) {
+        searchToggleBtn.addEventListener('click', openSearch);
+    }
+
+    if (closeSearchBtn) {
+        closeSearchBtn.addEventListener('click', closeSearch);
+    }
+
+    if (searchModal) {
+        searchModal.addEventListener('click', (e) => {
+            if (e.target === searchModal) closeSearch();
+        });
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            if (isContentFetched) {
+                performSearch(e.target.value);
+            }
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchModal && searchModal.classList.contains('active')) {
+            closeSearch();
+        }
+    });
+
 });

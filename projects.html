@@ -69,11 +69,139 @@
         <main style="padding-top: 100px;">
             <div class="container">
                 <h1 class="section-title">My Projects</h1>
+                <p class="subtitle" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                    A showcase of my work in Software Development, IoT, and IT Infrastructure.
+                </p>
             </div>
 
-            <!-- Projects Section -->
+            <!-- Featured Projects Section -->
+            <section id="featured-projects" class="section">
+                <div class="container">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="projects-grid">
+
+                        <!-- Project 1: Hospital Management -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="placeholder-img"
+                                    style="background: linear-gradient(45deg, #2b5876, #4e4376);"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Full Hospital Management Backend</h3>
+                                <p>Enterprise-grade backend system managing core hospital operations with high security
+                                    and scalability.</p>
+                                <div class="tech-stack">
+                                    <span>Spring Boot 3</span>
+                                    <span>Java 21</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Spring Security 6</span>
+                                    <span>JWT</span>
+                                </div>
+                                <div class="project-links">
+                                    <button class="view-details-btn" onclick="openModal('hospital-mgmt')">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: SmartAI Mobile -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="placeholder-img"
+                                    style="background: linear-gradient(45deg, #11998e, #38ef7d);"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Smart Academic Infrastructure (SmartAI)</h3>
+                                <p>Native Android app for academic management with automated attendance and real-time
+                                    quizzes.</p>
+                                <div class="tech-stack">
+                                    <span>Kotlin</span>
+                                    <span>Jetpack Compose</span>
+                                    <span>Firebase</span>
+                                    <span>MVVM</span>
+                                </div>
+                                <div class="project-links">
+                                    <button class="view-details-btn" onclick="openModal('smart-ai')">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: IoT Health Monitor -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="placeholder-img"
+                                    style="background: linear-gradient(45deg, #ff9966, #ff5e62);"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>IoT Health Monitoring System</h3>
+                                <p>Real-time health data acquisition system bridging hardware sensors with cloud
+                                    analytics.</p>
+                                <div class="tech-stack">
+                                    <span>ESP32</span>
+                                    <span>C/C++</span>
+                                    <span>MQTT</span>
+                                    <span>IoT Sensors</span>
+                                </div>
+                                <div class="project-links">
+                                    <button class="view-details-btn" onclick="openModal('iot-health')">View
+                                        Details</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: Result Management System -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="placeholder-img"
+                                    style="background: linear-gradient(45deg, #834d9b, #d04ed6);"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Result Management System (RMS)</h3>
+                                <p>Full-stack academic application for managing student results and generating official
+                                    transcripts.</p>
+                                <div class="tech-stack">
+                                    <span>Spring Boot</span>
+                                    <span>Thymeleaf</span>
+                                    <span>PostgreSQL</span>
+                                    <span>Bootstrap</span>
+                                </div>
+                                <div class="project-links">
+                                    <button class="view-details-btn" onclick="openModal('rms')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5: CACHCO -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <div class="placeholder-img"
+                                    style="background: linear-gradient(45deg, #000428, #004e92);"></div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Community Anti-Corruption Hub</h3>
+                                <p>Secure public-facing platform for community reporting and engagement against
+                                    corruption.</p>
+                                <div class="tech-stack">
+                                    <span>Kotlin</span>
+                                    <span>Spring Boot</span>
+                                    <span>SSR</span>
+                                    <span>JPA</span>
+                                </div>
+                                <div class="project-links">
+                                    <button class="view-details-btn" onclick="openModal('cachco')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other Projects Section -->
             <section id="projects" class="section">
                 <div class="container">
+                    <h2 class="section-title">Other Projects (GitHub)</h2>
                     <div id="projects-grid" class="projects-grid">
                         <!-- Projects will be loaded dynamically here -->
                         <div class="loading-spinner">Loading Projects...</div>
