@@ -1186,6 +1186,7 @@ h6 {
     font-size: 0.9rem;
     margin: 0;
     display: -webkit-box;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -1204,6 +1205,8 @@ h6 {
     content: "+";
     font-size: 3rem;
     vertical-align: super;
+    opacity: 0.8;
+}
 
     .skill-name {
         color: var(--text-primary);
@@ -1382,6 +1385,7 @@ h6 {
         font-size: 0.9rem;
         margin: 0;
         display: -webkit-box;
+    line-clamp: 2;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -1400,6 +1404,8 @@ h6 {
         content: "+";
         font-size: 3rem;
         vertical-align: super;
+    opacity: 0.8;
+}
         opacity: 0.8;
     }
 
@@ -1447,22 +1453,88 @@ h6 {
         width: 24px;
         height: 24px;
     }
-/* Page Scroll Progress Bar */
-.scroll-progress-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: transparent;
-    z-index: 9999;
-}
 
-.scroll-progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--accent-glow));
-    width: 0%;
-    transition: width 0.1s ease-out;
-    box-shadow: 0 0 10px var(--accent-glow);
-}
+    /* Page Scroll Progress Bar */
+    .scroll-progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: transparent;
+        z-index: 9999;
+    }
 
+    .scroll-progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--accent), var(--accent-glow));
+        width: 0%;
+        transition: width 0.1s ease-out;
+        box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+
+    /* Page Transition Animation */
+    body {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    body.loaded {
+        opacity: 1;
+    }
+
+    /* Skeleton Loading Animation */
+    .skeleton {
+        background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--border-color) 50%, var(--bg-secondary) 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: 200% 0;
+        }
+
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+    /* Micro-interactions */
+    .btn {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--accent);
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .project-card:hover .placeholder-img {
+        transform: scale(1.1);
+        transition: transform 0.5s ease;
+    }

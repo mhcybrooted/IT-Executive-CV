@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Page Transition
+    document.body.classList.add('loaded');
+
     console.log('CV Website Loaded');
 
     // Theme Toggle Logic
