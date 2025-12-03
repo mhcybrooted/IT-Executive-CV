@@ -169,6 +169,74 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+
+    // Static Project Data
+    const staticProjects = {
+        'hospital-mgmt': {
+            title: 'Full Hospital Management Backend',
+            description: 'Enterprise-grade backend system managing core hospital operations with high security and scalability. Features include patient management, appointment scheduling, doctor availability tracking, and billing.',
+            techStack: ['Spring Boot 3', 'Java 21', 'PostgreSQL', 'Spring Security 6', 'JWT'],
+            github: 'https://github.com/mhcybrooted/hospital-management-system',
+            learnings: 'Implemented complex role-based access control (RBAC) and optimized database queries for high-volume transaction handling.'
+        },
+        'smart-ai': {
+            title: 'Smart Academic Infrastructure (SmartAI)',
+            description: 'Native Android app for academic management with automated attendance and real-time quizzes. Allows students to view schedules, track attendance, and participate in quizzes.',
+            techStack: ['Kotlin', 'Jetpack Compose', 'Firebase', 'MVVM'],
+            github: 'https://github.com/mhcybrooted/smart-ai-android',
+            learnings: 'Mastered Jetpack Compose for modern UI development and Firebase for real-time data synchronization.'
+        },
+        'iot-health': {
+            title: 'IoT Health Monitoring System',
+            description: 'Real-time health data acquisition system bridging hardware sensors with cloud analytics. Monitors vital signs like heart rate and temperature.',
+            techStack: ['ESP32', 'C/C++', 'MQTT', 'IoT Sensors'],
+            github: 'https://github.com/mhcybrooted/iot-health-monitor',
+            learnings: 'Gained deep understanding of embedded systems programming and MQTT protocol for efficient IoT communication.'
+        },
+        'rms': {
+            title: 'Result Management System (RMS)',
+            description: 'Full-stack academic application for managing student results and generating official transcripts. Automates grade calculation and report card generation.',
+            techStack: ['Spring Boot', 'Thymeleaf', 'PostgreSQL', 'Bootstrap'],
+            github: 'https://github.com/mhcybrooted/result-management-system',
+            learnings: 'Built a robust MVC application with server-side rendering and complex data reporting features.'
+        },
+        'cachco': {
+            title: 'Community Anti-Corruption Hub',
+            description: 'Secure public-facing platform for community reporting and engagement against corruption. Features anonymous reporting and case tracking.',
+            techStack: ['Kotlin', 'Spring Boot', 'SSR', 'JPA'],
+            github: 'https://github.com/mhcybrooted/cachco',
+            learnings: 'Focused on security and anonymity features, implementing secure data handling practices.'
+        }
+    };
+
+    window.openModal = function (projectId) {
+        const project = staticProjects[projectId];
+        if (!project) return;
+
+        if (modal) {
+            modal.style.display = "block";
+
+            let content = `<h2>${project.title}</h2>`;
+            content += `<p>${project.description}</p>`;
+
+            content += `<div class="tech-stack" style="margin-bottom: 20px;">`;
+            project.techStack.forEach(tech => {
+                content += `<span>${tech}</span>`;
+            });
+            content += `</div>`;
+
+            content += `<h4>Key Learnings</h4>`;
+            content += `<p>${project.learnings}</p>`;
+
+            content += `<div style="margin-top: 20px;">
+                            <a href="${project.github}" target="_blank" class="btn btn-primary">View on GitHub</a>
+                        </div>`;
+
+            modalBody.innerHTML = content;
+        }
+    }
+
     async function openProjectModal(repo) {
         if (!modal) return;
 
