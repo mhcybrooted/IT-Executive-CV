@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Page Transition
     document.body.classList.add('loaded');
-
     console.log('CV Website Loaded');
 
     // Theme Toggle Logic
@@ -12,13 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     htmlElement.setAttribute('data-theme', savedTheme);
 
-    themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-    });
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -69,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { threshold: 0.5 });
 
-        statsObserver.observe(statsSection);
         statsObserver.observe(statsSection);
     }
 
@@ -169,8 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
-
     // Static Project Data
     const staticProjects = {
         'hospital-mgmt': {
@@ -260,8 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Decode Base64 content (GitHub API returns base64)
                 const decodedContent = atob(readmeData.content);
                 // Simple markdown to HTML conversion (very basic)
-                // For a real app, use a library like marked.js. Here we just show text.
-                // We'll just show the first 500 characters to avoid messiness without a parser
                 const previewText = decodedContent.substring(0, 1000).replace(/\n/g, '<br>');
 
                 content += `<div class="readme-preview">
@@ -329,7 +325,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     // Contact Form Handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -359,19 +354,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     // Success
-                    formStatus.textContent = '? Message sent successfully! I\'ll get back to you soon.';
+                    formStatus.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
                     formStatus.className = 'success';
                     formStatus.style.display = 'block';
                     contactForm.reset();
                 } else {
                     // Error
-                    formStatus.textContent = '? Oops! There was a problem sending your message. Please try again.';
+                    formStatus.textContent = '❌ Oops! There was a problem sending your message. Please try again.';
                     formStatus.className = 'error';
                     formStatus.style.display = 'block';
                 }
             } catch (error) {
                 // Network error
-                formStatus.textContent = '? Network error. Please check your connection and try again.';
+                formStatus.textContent = '❌ Network error. Please check your connection and try again.';
                 formStatus.className = 'error';
                 formStatus.style.display = 'block';
             } finally {
@@ -382,6 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
     // Search Functionality
     const searchPages = [
         { url: 'index.html', title: 'Home' },
@@ -397,29 +393,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inject Search Modal
     const searchModalHTML = `
-    <div id="search-modal" class="search-modal">
-        <div class="search-content">
-            <div class="search-header">
-                <input type="text" id="search-input" placeholder="Search entire website..." autocomplete="off">
-                <button id="close-search" aria-label="Close Search">&times;</button>
+        <div id="search-modal" class="search-modal">
+            <div class="search-content">
+                <div class="search-header">
+                    <input type="text" id="search-input" placeholder="Search entire website..." autocomplete="off">
+                    <button id="close-search" aria-label="Close Search">&times;</button>
+                </div>
+                <div id="search-results" class="search-results"></div>
             </div>
-            <div id="search-results" class="search-results"></div>
         </div>
-    </div>
-    `;
+        `;
     document.body.insertAdjacentHTML('beforeend', searchModalHTML);
 
     // Add Search Icon to Header
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         const searchBtnHTML = `
-        <button id="search-toggle" class="theme-toggle" aria-label="Open Search" style="margin-right: 10px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-        </button>
-        `;
+            <button id="search-toggle" class="theme-toggle" aria-label="Open Search" style="margin-right: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            `;
         themeToggle.insertAdjacentHTML('beforebegin', searchBtnHTML);
     }
 
@@ -518,11 +514,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             return `
-            <a href="${result.url}" class="search-result-item" onclick="closeSearch()">
-                <h4>${result.title}</h4>
-                <p>${snippet}</p>
-            </a>
-            `;
+                <a href="${result.url}" class="search-result-item" onclick="closeSearch()">
+                    <h4>${result.title}</h4>
+                    <p>${snippet}</p>
+                </a>
+                `;
         }).join('');
     }
 
